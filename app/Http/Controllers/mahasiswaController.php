@@ -32,7 +32,7 @@ class MahasiswaController extends Controller
             'matakuliah_id.*' => 'exists:mata_kuliah,id',
         ], [
             'nim.required'      => 'NIM tidak boleh kosong.',
-            'nim.unique'        => 'NIM sudah terdaftar dalam sistem.',
+            'nim.unique'        => 'NIM sudah terdaftar.',
             'nim.max'           => 'NIM maksimal 20 karakter.',
             'nama.required'     => 'Nama mahasiswa wajib diisi.',
             'kelas.required'    => 'Kelas wajib diisi.',
@@ -65,7 +65,7 @@ class MahasiswaController extends Controller
             $mahasiswa->matakuliah()->sync($request->matakuliah_id);
         }
 
-        return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa dan KRS berhasil disimpan!');
+        return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa berhasil disimpan!');
     }
 
 

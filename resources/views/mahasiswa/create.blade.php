@@ -89,7 +89,7 @@
                         </div>
                 </div>
 
-                <div class="mt-4">
+                <div class="mt-3 mb-4 ms-3">
                     <button type="submit" class="btn btn-primary">Simpan Data</button>
                     <a href="{{ route('mahasiswa.index') }}" class="btn btn-secondary">Kembali</a>
                 </div>

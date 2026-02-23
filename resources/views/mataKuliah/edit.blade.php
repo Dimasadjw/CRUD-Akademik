@@ -10,16 +10,16 @@
 
             <div class="mb-3">
                 <label class="form-label">Kode MK</label>
-                <input type="text" name="kode" value="{{ old('kode', $matakuliah->kode_mk) }}" class="form-control @error('kode') is-invalid @enderror">
-                @error('kode')
+                <input type="text" name="kode_mk" value="{{ old('kode_mk', $matakuliah->kode_mk) }}" class="form-control @error('kode_mk') is-invalid @enderror">
+                @error('kode_mk')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Nama Mata Kuliah</label>
-                <input type="text" name="nama" value="{{ old('nama', $matakuliah->nama_mk) }}" class="form-control @error('nama') is-invalid @enderror">
-                @error('nama')
+                <input type="text" name="nama_mk" value="{{ old('nama_mk', $matakuliah->nama_mk) }}" class="form-control @error('nama_mk') is-invalid @enderror">
+                @error('nama_mk')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

@@ -27,7 +27,7 @@ class MataKuliahController extends Controller
             'semester'  => 'required|numeric|min:1|max:8',
         ], [
             'kode_mk.required' => 'Kode mata kuliah wajib diisi.',
-            'kode_mk.unique'   => 'Kode mata kuliah ini sudah ada.',
+            'kode_mk.unique'   => 'Kode mata kuliah ini sudah terdaftar.',
             'nama_mk.required' => 'Nama mata kuliah tidak boleh kosong.',
             'sks.required'     => 'Jumlah SKS harus diisi.',
             'sks.max'          => 'SKS maksimal adalah 6.',

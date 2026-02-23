@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Mahasiswa;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +16,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        
+        $matkuls = \App\Models\MataKuliah::factory(40)->create();
+        Mahasiswa::factory(60)->create()->each(function ($mhs) use ($matkuls) {
+
+            $matkulSesuai = $matkuls->where('semester', $mhs->semester);
+
+            if ($matkulSesuai->count() > 0) {
+                $mhs->mataKuliah()->attach($matkulSesuai->pluck('id'));
+            }
+        });
 
         User::factory()->create([
             'name' => 'Test User',
